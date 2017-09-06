@@ -1,0 +1,39 @@
+{
+  "name": "vscode-tools",
+  "version": "1.0.0",
+  "publisher": "philippejer",
+  "displayName": "VSCode Tools",
+  "description": "Various quick & dirty tools for Visual Studio Code.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philippejer/vscode-tools.git"
+  },
+  "engines": {
+    "vscode": "^0.10.0"
+  },
+  "activationEvents": [
+    "onCommand:tools.convertToTemplateStrings"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tools.convertToTemplateStrings",
+        "title": "Convert to Template Strings",
+        "category": "Tools"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "package": "vsce package",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.40",
+    "vscode": "^1.0.0",
+    "typescript": "^2.0.3"
+  }
+}
